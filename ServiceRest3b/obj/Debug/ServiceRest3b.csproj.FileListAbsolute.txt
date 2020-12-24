@@ -1,0 +1,7 @@
+C:\Users\AbdulEriawanNahar\source\repos\ServiceRest3b\bin\Debug\ServiceRest3b.dll.config
+C:\Users\AbdulEriawanNahar\source\repos\ServiceRest3b\bin\Debug\ServiceRest3b.dll
+C:\Users\AbdulEriawanNahar\source\repos\ServiceRest3b\bin\Debug\ServiceRest3b.pdb
+C:\Users\AbdulEriawanNahar\source\repos\ServiceRest3b\obj\Debug\ServiceRest3b.csprojAssemblyReference.cache
+C:\Users\AbdulEriawanNahar\source\repos\ServiceRest3b\obj\Debug\ServiceRest3b.csproj.CoreCompileInputs.cache
+C:\Users\AbdulEriawanNahar\source\repos\ServiceRest3b\obj\Debug\ServiceRest3b.dll
+C:\Users\AbdulEriawanNahar\source\repos\ServiceRest3b\obj\Debug\ServiceRest3b.pdb

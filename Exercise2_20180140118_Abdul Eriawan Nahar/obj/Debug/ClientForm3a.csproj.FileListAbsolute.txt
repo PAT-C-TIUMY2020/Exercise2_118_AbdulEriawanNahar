@@ -1,0 +1,12 @@
+C:\Users\AbdulEriawanNahar\source\repos\Exercise2_20180140118_Abdul Eriawan Nahar\obj\Debug\ClientForm3a.csprojAssemblyReference.cache
+C:\Users\AbdulEriawanNahar\source\repos\Exercise2_20180140118_Abdul Eriawan Nahar\obj\Debug\Exercise2_20180140118_Abdul_Eriawan_Nahar.Form1.resources
+C:\Users\AbdulEriawanNahar\source\repos\Exercise2_20180140118_Abdul Eriawan Nahar\obj\Debug\Exercise2_20180140118_Abdul_Eriawan_Nahar.Properties.Resources.resources
+C:\Users\AbdulEriawanNahar\source\repos\Exercise2_20180140118_Abdul Eriawan Nahar\obj\Debug\ClientForm3a.csproj.GenerateResource.cache
+C:\Users\AbdulEriawanNahar\source\repos\Exercise2_20180140118_Abdul Eriawan Nahar\obj\Debug\ClientForm3a.csproj.CoreCompileInputs.cache
+C:\Users\AbdulEriawanNahar\source\repos\Exercise2_20180140118_Abdul Eriawan Nahar\obj\Debug\Exercise2_20180140118_Abdul Eriawan Nahar.exe
+C:\Users\AbdulEriawanNahar\source\repos\Exercise2_20180140118_Abdul Eriawan Nahar\obj\Debug\Exercise2_20180140118_Abdul Eriawan Nahar.pdb
+C:\Users\AbdulEriawanNahar\source\repos\Exercise2_20180140118_Abdul Eriawan Nahar\bin\Debug\Exercise2_20180140118_Abdul Eriawan Nahar.exe.config
+C:\Users\AbdulEriawanNahar\source\repos\Exercise2_20180140118_Abdul Eriawan Nahar\bin\Debug\Exercise2_20180140118_Abdul Eriawan Nahar.exe
+C:\Users\AbdulEriawanNahar\source\repos\Exercise2_20180140118_Abdul Eriawan Nahar\bin\Debug\Exercise2_20180140118_Abdul Eriawan Nahar.pdb
+C:\Users\AbdulEriawanNahar\source\repos\Exercise2_20180140118_Abdul Eriawan Nahar\bin\Debug\Newtonsoft.Json.dll
+C:\Users\AbdulEriawanNahar\source\repos\Exercise2_20180140118_Abdul Eriawan Nahar\obj\Debug\ClientForm3a.csproj.CopyComplete
