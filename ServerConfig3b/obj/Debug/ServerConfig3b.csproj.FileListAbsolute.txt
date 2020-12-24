@@ -1,0 +1,14 @@
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\bin\Debug\ServerConfig3b.exe.config
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\bin\Debug\ServerConfig3b.exe
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\bin\Debug\ServerConfig3b.pdb
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\obj\Debug\ServerConfig3b.csprojAssemblyReference.cache
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\obj\Debug\ServerConfig3b.Form1.resources
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\obj\Debug\ServerConfig3b.Properties.Resources.resources
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\obj\Debug\ServerConfig3b.csproj.GenerateResource.cache
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\obj\Debug\ServerConfig3b.csproj.CoreCompileInputs.cache
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\obj\Debug\ServerConfig3b.exe
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\obj\Debug\ServerConfig3b.pdb
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\bin\Debug\ServiceRest3b.dll
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\bin\Debug\ServiceRest3b.pdb
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\bin\Debug\ServiceRest3b.dll.config
+C:\Users\AbdulEriawanNahar\source\repos\ServerConfig3b\obj\Debug\ServerConfig3b.csproj.CopyComplete

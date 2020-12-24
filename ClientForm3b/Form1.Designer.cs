@@ -61,6 +61,7 @@
             this.btDelete.TabIndex = 23;
             this.btDelete.Text = "Delete";
             this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btUpdate
             // 
@@ -144,6 +145,7 @@
             this.buttonJumlah.TabIndex = 25;
             this.buttonJumlah.Text = "Jumlah";
             this.buttonJumlah.UseVisualStyleBackColor = true;
+            this.buttonJumlah.Click += new System.EventHandler(this.buttonJumlah_Click);
             // 
             // dataGridView1
             // 

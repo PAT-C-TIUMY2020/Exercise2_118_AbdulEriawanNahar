@@ -11,6 +11,33 @@ namespace ServiceRest3b
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class TI_UMY : ITI_UMY
     {
+        public string CountMahasiswa()
+        {
+            string msg = "gagal";
+            SqlConnection sqlcon = new SqlConnection("Data Source = DESKTOP-EJH2D6F\\ARYA; Initial Catalog = TI UMY; Persist Security Info = True; User ID = sa; Password = arya@cool123");
+            string query = String.Format("select Count(NIM) From Mahasiswa");
+            string stm = "SELECT COUNT(Mahasiswa) From NIM";
+            SqlCommand sqlcom = new SqlCommand(query, sqlcon);
+
+            try
+            {
+                sqlcon.Open();
+                Console.WriteLine(query);
+                Int32 count = (Int32)sqlcom.ExecuteScalar();
+                sqlcon.Close();
+                msg = "Jumlah Data " + count;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(query);
+                msg = "GAGAL";
+            }
+
+            return msg;
+        }
+
         public string CreateMahasiswa(Mahasiswa mhs)
         {
             string msg = "GAGAL";
@@ -37,11 +64,15 @@ namespace ServiceRest3b
             return msg;
         }
 
-        public string DeleteMahasiswa(Mahasiswa mhs)
+     
+        
+
+        public string DeleteMahasiswa(string nim)
         {
-            string msg = "GAGAL";
+            string msg = "gagal";
+            Mahasiswa mhs = new Mahasiswa();
             SqlConnection sqlcon = new SqlConnection("Data Source = DESKTOP-EJH2D6F\\ARYA; Initial Catalog = TI UMY; Persist Security Info = True; User ID = sa; Password = arya@cool123");
-            string query = String.Format("delete from Mahasiswa where NIM = '{0})",nim);
+            string query = String.Format("delete from Mahasiswa where NIM =  '" + nim + "'");
             SqlCommand sqlcom = new SqlCommand(query, sqlcon);
             try
             {
@@ -126,33 +157,29 @@ namespace ServiceRest3b
 
 
 
-        public Mahasiswa UpdateMahasiswa(string nim)
-        {
-            Mahasiswa mhs = new Mahasiswa();
-            SqlConnection con = new SqlConnection("Data Source = DESKTOP-EJH2D6F\\ARYA; Initial Catalog = TI UMY; Persist Security Info = True; User ID = sa; Password = arya@cool123");
-            string query = String.Format("select Nama, NIM, Prodi, Angkatan from Mahasiswa where NIM = '{0}'", nim);
-            SqlCommand com = new SqlCommand(query, con);
+        
 
+        public string UpdateMahasiswa(string nim, string nama, string prodi, string angkatan)
+        {
             try
             {
-                con.Open();
-                SqlDataReader reader = com.ExecuteReader();
+                string constring = "Data Source = DESKTOP-EJH2D6F\\ARYA; Initial Catalog = TI UMY; Persist Security Info = True; User ID = sa; Password = arya@cool123";
+                SqlConnection connection;
+                SqlCommand com;
 
-                while (reader.Read())
-                {
-                    mhs.nama = reader.GetString(0);
-                    mhs.nim = reader.GetString(1);
-                    mhs.prodi = reader.GetString(2);
-                    mhs.angkatan = reader.GetString(3);
-                }
-                con.Close();
+                string sql2 = "update Mahasiswa SET Nama ='" + nama + "', Prodi ='" + prodi + "', Angkatan ='" + angkatan + "' where NIM = '" + nim + "'";
+                connection = new SqlConnection(constring);
+                com = new SqlCommand(sql2, connection);
+                connection.Open();
+                com.ExecuteNonQuery();
+                connection.Close();
+
+                return "sukses";
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(query);
+                return e.ToString();
             }
-            return mhs;
         }
     }
 }

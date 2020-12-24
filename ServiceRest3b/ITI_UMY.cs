@@ -24,12 +24,14 @@ namespace ServiceRest3b
         [WebInvoke(Method = "POST", UriTemplate = "Mahasiswa", RequestFormat = WebMessageFormat.Json)]
         string CreateMahasiswa(Mahasiswa mhs);
         [OperationContract]
-        [WebInvoke(Method = "PUT", UriTemplate = "Mahasiswa/nim=(nim)", RequestFormat = WebMessageFormat.Json)]
-        //string UpdateMahasiswa(Mahasiswa mhs);
-        Mahasiswa UpdateMahasiswa(string nim);
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.WrappedRequest, UriTemplate = "Mahasiswa1", ResponseFormat = WebMessageFormat.Json)]
+        string UpdateMahasiswa(string nim, string nama, string prodi, string angkatan);
         [OperationContract]
-        [WebInvoke(Method = "DELETE", UriTemplate = "Mahasiswa", RequestFormat = WebMessageFormat.Json)]
-        string DeleteMahasiswa(Mahasiswa mhs);
+        [WebInvoke(Method = "DELETE", BodyStyle = WebMessageBodyStyle.WrappedRequest, UriTemplate = "Mahasiswa2", RequestFormat = WebMessageFormat.Json)]
+        string DeleteMahasiswa(string nim);
+        [OperationContract]
+        [WebInvoke(UriTemplate = "Mahasiswa3", ResponseFormat = WebMessageFormat.Json)]
+        string CountMahasiswa();
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
