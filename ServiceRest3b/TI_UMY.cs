@@ -69,28 +69,30 @@ namespace ServiceRest3b
 
         public string DeleteMahasiswa(string nim)
         {
-            string msg = "gagal";
-            Mahasiswa mhs = new Mahasiswa();
-            SqlConnection sqlcon = new SqlConnection("Data Source = DESKTOP-EJH2D6F\\ARYA; Initial Catalog = TI UMY; Persist Security Info = True; User ID = sa; Password = arya@cool123");
-            string query = String.Format("delete from Mahasiswa where NIM =  '" + nim + "'");
-            SqlCommand sqlcom = new SqlCommand(query, sqlcon);
+            string connectionString = "Data Source = DESKTOP-EJH2D6F\\ARYA; Initial Catalog = TI UMY; Persist Security Info = True; User ID = sa; Password = arya@cool123";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            string query = string.Format("DELETE from dbo.Mahasiswa where NIM = '{0}'", nim);
+            SqlCommand cmd = new SqlCommand(query, sqlConnection);
+            int result = 0;
+            string a = "Gagal";
+
             try
             {
-                sqlcon.Open();
-                Console.WriteLine(query);
-                sqlcom.ExecuteNonQuery();
-                sqlcon.Close();
-                msg = "Sukses";
-
+                sqlConnection.Open();
+                //SqlConnection.Open();
+                result = cmd.ExecuteNonQuery();
+                sqlConnection.Close();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(query);
-                msg = "GAGAL";
+                a = ex.ToString();
             }
 
-            return msg;
+            if (result != 0)
+            {
+                a = "Sukses";
+            }
+            return a;
         }
 
         public List<Mahasiswa> GetAllMahasiswa()
@@ -155,31 +157,27 @@ namespace ServiceRest3b
             return mhs;
         }
 
-
-
-        
-
-        public string UpdateMahasiswa(string nim, string nama, string prodi, string angkatan)
+        public string UpdateMahasiswa(Mahasiswa mhs)
         {
+            string msg = "Gagal";
+            string connectionString = "Data Source = DESKTOP-EJH2D6F\\ARYA; Initial Catalog = TI UMY; Persist Security Info = True; User ID = sa; Password = arya@cool123";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            string query = string.Format("Update dbo.Mahasiswa set Nama = '{0}', Prodi = '{1}', Angkatan = '{2}' where NIM = '{3}'", mhs.nama, mhs.prodi, mhs.angkatan, mhs.nim);
+            SqlCommand cmd = new SqlCommand(query, sqlConnection);
+
             try
             {
-                string constring = "Data Source = DESKTOP-EJH2D6F\\ARYA; Initial Catalog = TI UMY; Persist Security Info = True; User ID = sa; Password = arya@cool123";
-                SqlConnection connection;
-                SqlCommand com;
-
-                string sql2 = "update Mahasiswa SET Nama ='" + nama + "', Prodi ='" + prodi + "', Angkatan ='" + angkatan + "' where NIM = '" + nim + "'";
-                connection = new SqlConnection(constring);
-                com = new SqlCommand(sql2, connection);
-                connection.Open();
-                com.ExecuteNonQuery();
-                connection.Close();
-
-                return "sukses";
+                sqlConnection.Open();
+                cmd.ExecuteNonQuery();
+                sqlConnection.Close();
+                msg = "Sukses";
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return e.ToString();
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(query);
             }
+            return msg;
         }
     }
 }

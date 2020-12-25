@@ -66,5 +66,10 @@ namespace ServerConfig3b
                 Console.ReadLine();
             }
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

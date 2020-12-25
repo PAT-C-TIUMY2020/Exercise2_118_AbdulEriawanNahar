@@ -1,12 +1,5 @@
-C:\Users\AbdulEriawanNahar\source\repos\ClientForm3b\bin\Debug\ClientForm3b.exe.config
-C:\Users\AbdulEriawanNahar\source\repos\ClientForm3b\bin\Debug\ClientForm3b.exe
-C:\Users\AbdulEriawanNahar\source\repos\ClientForm3b\bin\Debug\ClientForm3b.pdb
-C:\Users\AbdulEriawanNahar\source\repos\ClientForm3b\bin\Debug\Newtonsoft.Json.dll
 C:\Users\AbdulEriawanNahar\source\repos\ClientForm3b\obj\Debug\ClientForm3b.csprojAssemblyReference.cache
 C:\Users\AbdulEriawanNahar\source\repos\ClientForm3b\obj\Debug\ClientForm3b.Form1.resources
 C:\Users\AbdulEriawanNahar\source\repos\ClientForm3b\obj\Debug\ClientForm3b.Properties.Resources.resources
 C:\Users\AbdulEriawanNahar\source\repos\ClientForm3b\obj\Debug\ClientForm3b.csproj.GenerateResource.cache
 C:\Users\AbdulEriawanNahar\source\repos\ClientForm3b\obj\Debug\ClientForm3b.csproj.CoreCompileInputs.cache
-C:\Users\AbdulEriawanNahar\source\repos\ClientForm3b\obj\Debug\ClientForm3b.csproj.CopyComplete
-C:\Users\AbdulEriawanNahar\source\repos\ClientForm3b\obj\Debug\ClientForm3b.exe
-C:\Users\AbdulEriawanNahar\source\repos\ClientForm3b\obj\Debug\ClientForm3b.pdb

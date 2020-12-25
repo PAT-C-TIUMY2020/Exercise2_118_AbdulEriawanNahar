@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ClientForm3b
 {
     public partial class Form1 : Form
@@ -19,9 +20,10 @@ namespace ClientForm3b
             InitializeComponent();
         }
 
+		ClassData classData = new ClassData();
 		public void TampilData()
 		{
-			var json = new WebClient().DownloadString("http://localhost:1115/Mahasiswa");
+			var json = new WebClient().DownloadString("http://localhost:1908/Mahasiswa");
 			var data = JsonConvert.DeserializeObject<List<Mahasiswa>>(json);
 
 			dataGridView1.DataSource = data;
@@ -76,52 +78,62 @@ namespace ClientForm3b
 		string baseurl = "http://localhost:1908/";
 		private void btUpdate_Click(object sender, EventArgs e)
         {
-			var json = new WebClient().DownloadString("http://localhost:1908/Mahasiswa");
-			var data = JsonConvert.DeserializeObject<List<Mahasiswa>>(json);
-
-			string nim = textBoxNIM.Text;
-			var item = data.Where(x => x.nim == textBoxNIM.Text).FirstOrDefault();
-			if (item != null)
+			if (textBoxNIM.Text != "" &&
+				textBoxNama.Text != "" &&
+				textBoxProdi.Text != "" &&
+				textBoxAngkatan.Text != "")
 			{
-				// update logger with your textboxes data
-				item.nama = textBoxNama.Text;
-				item.nim = textBoxNIM.Text;
-				item.prodi = textBoxProdi.Text;
-				item.angkatan = textBoxAngkatan.Text;
+				if (textBoxNIM.Text.Length <= 12 &&
+				textBoxAngkatan.Text.Length <= 4 &&
+				textBoxProdi.Text.Length <= 30 &&
+				textBoxNama.Text.Length <= 20)
+				{
+					try
+					{
+						Mahasiswa mhs = new Mahasiswa();
+						mhs.nim = textBoxNIM.Text;
+						mhs.nama = textBoxNama.Text;
+						mhs.prodi = textBoxProdi.Text;
+						mhs.angkatan = textBoxAngkatan.Text;
 
-				// Save everything
-				string output = JsonConvert.SerializeObject(item, Formatting.Indented);
-				var postdata = new WebClient();
-				postdata.Headers.Add(HttpRequestHeader.ContentType, "application/json");
-				string response = postdata.UploadString(baseurl + "UpdateMahasiswa", output);
-				Console.WriteLine(response);
-				TampilData();
+						ClassData classData = new ClassData();
+						classData.updateDatabase(mhs);
+						MessageBox.Show("Data successfuly updated");
 
+						dataGridView1.DataSource = classData.getAllData();
+					}
+					catch
+					{
+						
+						MessageBox.Show("Server Error");
+					}
+				}
+				else
+				{
+					MessageBox.Show("Please check your data");
+				}
+			}
+			else
+			{
+				MessageBox.Show("Error");
 			}
 		}
 
         private void btDelete_Click(object sender, EventArgs e)
         {
-			var json = new WebClient().DownloadString("http://localhost:1908/Mahasiswa");
-			var data = JsonConvert.DeserializeObject<List<Mahasiswa>>(json);
-
 			if (MessageBox.Show("Are you sure you want to delete", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 			{
-
-				string nim = textBoxNIM.Text;
-				var item = data.Where(x => x.nim == textBoxNIM.Text).FirstOrDefault();
-				if (item != null)
+				try
 				{
-					data.Remove(item);
-					// Save everything
-					string output = JsonConvert.SerializeObject(item, Formatting.Indented);
-					var postdata = new WebClient();
-					postdata.Headers.Add(HttpRequestHeader.ContentType, "application/json");
-					string response = postdata.UploadString(baseurl + "DeleteMahasiswa", output);
-					Console.WriteLine(response);
-					TampilData();
+					ClassData classData = new ClassData();
+					classData.deleteMahasiswa(textBoxNIM.Text);
+					dataGridView1.DataSource = classData.getAllData();
+					MessageBox.Show("Data successfuly deleted");
 				}
-
+				catch (Exception ex)
+				{
+					MessageBox.Show("Error");
+				}
 			}
 		}
 
@@ -132,5 +144,7 @@ namespace ClientForm3b
 			int length = data.Count();
 			labelTotal.Text = Convert.ToString(length);
 		}
+
+        
     }
 }

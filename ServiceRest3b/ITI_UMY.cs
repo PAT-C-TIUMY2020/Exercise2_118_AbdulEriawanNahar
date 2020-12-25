@@ -25,7 +25,7 @@ namespace ServiceRest3b
         string CreateMahasiswa(Mahasiswa mhs);
         [OperationContract]
         [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.WrappedRequest, UriTemplate = "Mahasiswa1", ResponseFormat = WebMessageFormat.Json)]
-        string UpdateMahasiswa(string nim, string nama, string prodi, string angkatan);
+        string UpdateMahasiswa(Mahasiswa mhs);
         [OperationContract]
         [WebInvoke(Method = "DELETE", BodyStyle = WebMessageBodyStyle.WrappedRequest, UriTemplate = "Mahasiswa2", RequestFormat = WebMessageFormat.Json)]
         string DeleteMahasiswa(string nim);
